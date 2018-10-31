@@ -4,12 +4,14 @@ import com.alevel.constants.Gender;
 import com.alevel.Utils;
 
 public class Person {
+    public static final int MIN_AGE = 0;
+    public static final int MAX_AGE = 100;
     private String name;
     private int age;
     private Gender gender;
 
     public Person(String name, int age, Gender gender) {
-        Utils.validate(age, 0, 100);
+        Utils.validate(age, MIN_AGE, MAX_AGE);
         this.name = name;
         this.age = age;
         this.gender = gender;

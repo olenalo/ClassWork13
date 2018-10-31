@@ -63,7 +63,6 @@ public class Teacher extends Person {
                 subjectsTitles[i] = subjects[i].getName();
             }
         }
-        // TODO: come up with a better fix :[
         String[] nonNullSubjectsTitles = new String[nonNullElsNumber];
         for (int i = 0; i < subjectsTitles.length; i++) {
             if (subjectsTitles[i] != null) {  // better double check
