@@ -6,6 +6,7 @@ public class Utils {
     private Utils(){
         throw new UnsupportedOperationException("This is util class");
     }
+
     public static void validate(int arg, int from, int to){
         double doubleArg = arg;
         validate(doubleArg, from, to);
@@ -16,7 +17,6 @@ public class Utils {
             throw new IllegalArgumentException("Invalid paraemter");
         }
     }
-
 
     public static void validateString(String regex, String idNumber) {
         if(!Pattern.matches(regex, idNumber)){

@@ -55,7 +55,24 @@ public class Teacher extends Person {
     }
 
     public boolean removeSubject(Subject subject) {
-        int index = Arrays.binarySearch(subjects, subject);
+        String[] subjectsTitles = new String[subjects.length];
+        int nonNullElsNumber = 0;
+        for (int i = 0; i < subjects.length; i++) {
+            if (subjects[i] != null) {
+                nonNullElsNumber++;
+                subjectsTitles[i] = subjects[i].getName();
+            }
+        }
+        // TODO: come up with a better fix :[
+        String[] nonNullSubjectsTitles = new String[nonNullElsNumber];
+        for (int i = 0; i < subjectsTitles.length; i++) {
+            if (subjectsTitles[i] != null) {  // better double check
+                nonNullSubjectsTitles[i] = subjectsTitles[i];
+            }
+        }
+        int index = Arrays.binarySearch(nonNullSubjectsTitles, subject.getName());
+        // int index = Arrays.binarySearch(subjects, subject);
+
         if (index < 0) {
             return false;
         }
@@ -67,4 +84,13 @@ public class Teacher extends Person {
         subjectsCount--;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "salary=" + salary +
+                ", subjects count=" + subjectsCount +
+                "} " + super.toString();
+    }
+
 }
