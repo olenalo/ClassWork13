@@ -4,12 +4,19 @@ public enum Subject {
     COMPUTER_SCIENCE("Computer Science"),
     CHEMISTRY("Chemistry"),
     ENGLISH("English"),
+    FRENCH("French"),
+    SPANISH("Spanish"),
+    BIOLOGY("Biology"),
     OTHER("Other");
 
     String name;
 
     Subject(String name) {
         this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override
